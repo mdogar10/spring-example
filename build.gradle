@@ -13,8 +13,8 @@ apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 
 jar {
-    baseName = 'spring-example'
-    version =  '0.1.0'
+    baseName = 'addressLookupService'
+    version =  '0.0.1'
 }
 
 repositories {

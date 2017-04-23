@@ -36,7 +36,6 @@ public class AddressLookupServiceImpl implements AddressLookupService {
         final Address address = restTemplate.getForObject(
                 addressServiceConfiguration.getUrl() + "key=" + addressServiceConfiguration.getKey() +
                         "&query=" + postCode + "&country=" + addressServiceConfiguration.getCountry(), Address.class);
-
         return mapToAddressResponse(address);
     }
 

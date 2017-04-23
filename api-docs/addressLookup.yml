@@ -1,0 +1,43 @@
+swagger: '2.0'
+info:
+  version: '0.0.1-SNAPSHOT'
+  title: Address Lookup Service
+  description: A RestFul API that allowed to lookup addresses for provided postcode.
+  contact:
+    name: Mansoor Dogar
+    url: http://
+host: loveholidays.co.uk
+basePath: /api/v1/address
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /postcode/{value}:
+    get:
+      description: find address for the provided postcode
+      operationId: findAddressByPostcode
+      produces:
+        - application/json
+      parameters:
+        - name: value
+          in: path
+          description: address postcode
+          required: true
+          type: String
+      responses:
+        '200':
+          description: Successful
+          schema:
+            $ref: '#/definitions/addressResponse'
+        default:
+          description: unexpected error
+definitions:
+  addressResponse:
+    required:
+      - streetName
+    properties:
+      streetName:
+        type: string
